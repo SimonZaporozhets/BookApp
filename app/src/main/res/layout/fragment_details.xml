@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".details.DetailsFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitStart"
+            android:src="@drawable/details_bg"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/back_arrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="32dp"
+            android:src="@drawable/ic_left_arrow"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/book_cover_wrapper"
+            android:layout_width="200dp"
+            android:layout_height="250dp"
+            app:cardCornerRadius="16dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/back_arrow">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/book_cover"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/book_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="If It’s Only Love"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toLeftOf="@id/book_cover_wrapper"
+            app:layout_constraintRight_toRightOf="@id/book_cover_wrapper"
+            app:layout_constraintTop_toBottomOf="@+id/book_cover_wrapper" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/book_author"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="Zoey Evers"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            app:layout_constraintLeft_toLeftOf="@id/book_name"
+            app:layout_constraintRight_toRightOf="@id/book_name"
+            app:layout_constraintTop_toBottomOf="@+id/book_name" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/book_details_bg"
+            android:orientation="vertical"
+            android:paddingHorizontal="16dp"
+            android:paddingTop="20dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/book_author">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/readers_info"
+                    android:layout_width="93dp"
+                    android:layout_height="wrap_content"
+                    android:text="22.2k"
+                    android:textAlignment="center"
+                    android:textColor="#0B080F"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Readers"
+                    android:textColor="#D9D5D6"
+                    android:textSize="12sp"
+                    app:layout_constraintLeft_toLeftOf="@id/readers_info"
+                    app:layout_constraintRight_toRightOf="@id/readers_info"
+                    app:layout_constraintTop_toBottomOf="@id/readers_info" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/likes_info"
+                    android:layout_width="94dp"
+                    android:layout_height="wrap_content"
+                    android:text="10.4k"
+                    android:textAlignment="center"
+                    android:textColor="#0B080F"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintLeft_toRightOf="@id/readers_info"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Likes"
+                    android:textColor="#D9D5D6"
+                    android:textSize="12sp"
+                    app:layout_constraintLeft_toLeftOf="@id/likes_info"
+                    app:layout_constraintRight_toRightOf="@id/likes_info"
+                    app:layout_constraintTop_toBottomOf="@id/likes_info" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/quotes_info"
+                    android:layout_width="93dp"
+                    android:layout_height="wrap_content"
+                    android:text="32.5k"
+                    android:textAlignment="center"
+                    android:textColor="#0B080F"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintLeft_toRightOf="@id/likes_info"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Quotes"
+                    android:textColor="#D9D5D6"
+                    android:textSize="12sp"
+                    app:layout_constraintLeft_toLeftOf="@id/quotes_info"
+                    app:layout_constraintRight_toRightOf="@id/quotes_info"
+                    app:layout_constraintTop_toBottomOf="@id/quotes_info" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/genre_info"
+                    android:layout_width="94dp"
+                    android:layout_height="wrap_content"
+                    android:text="Fantasy"
+                    android:textAlignment="center"
+                    android:textColor="#0B080F"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintLeft_toRightOf="@id/quotes_info"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Genre"
+                    android:textColor="#D9D5D6"
+                    android:textSize="12sp"
+                    app:layout_constraintLeft_toLeftOf="@id/genre_info"
+                    app:layout_constraintRight_toRightOf="@id/genre_info"
+                    app:layout_constraintTop_toBottomOf="@id/genre_info" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="1.3dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/separator" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/summary_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text="Summary"
+                android:textColor="#0B080F"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/summary_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="According to researchers at Duke University, habits account for about 40 percent of our behaviors on any given day. Your life today is essentially the sum of your habits. How in shape or out of shape you are? A result of your habits. How happy or unhappy you are? A result of your habits. How successful or unsuccessful you are? A result of your habits."
+                android:textColor="#393637"
+                android:textSize="14sp"/>
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="1.3dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="32dp"
+                android:background="@drawable/separator" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="280dp"
+                android:layout_height="40dp"
+                android:text="Read now"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="80dp"
+                android:textColor="@color/white"
+                android:textAllCaps="false"
+                android:background="@drawable/read_btn_bg"
+                android:layout_gravity="center"/>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
