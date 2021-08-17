@@ -32,19 +32,9 @@ class SplashActivity : AppCompatActivity() {
 
         remoteConfigUseCase.invoke()
 
-        var t = 0
-        val handler = Handler(mainLooper)
-        handler.postDelayed(object : Runnable {
-            override fun run() {
-                t++
-                binding.indeterminateBar.progress = t
-                if (t < 100) {
-                    handler.postDelayed(this, 20);
-                } else {
-                    startActivity(intent)
-                    finish()
-                }
-            }
+        Handler(mainLooper).postDelayed({
+            startActivity(intent)
+            finish()
         }, TimeUnit.SECONDS.toMillis(2))
     }
 }
