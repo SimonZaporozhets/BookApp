@@ -10,21 +10,21 @@ import com.google.android.material.tabs.TabLayoutMediator
 
 class BannerParentViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
-        private val binding = BannerItemBinding.bind(itemView)
+    private val binding = BannerItemBinding.bind(itemView)
 
-        fun bind(bannerListModel: BannerListModel, clickListener: (Int) -> Unit) {
+    fun bind(bannerListModel: BannerListModel, clickListener: (Int) -> Unit) {
 
-            val bannerAdapter = BannerAdapter(bannerListModel.bannerItemList, clickListener)
+        val bannerAdapter = BannerAdapter(bannerListModel.bannerItemList, clickListener)
 
-            binding.topBanner.adapter = bannerAdapter
+        binding.topBanner.adapter = bannerAdapter
 
-            TabLayoutMediator(binding.tabLayout, binding.topBanner) { tab, position ->
-                //Some implementation
-            }.attach()
+        TabLayoutMediator(binding.tabLayout, binding.topBanner) { tab, position ->
+            //Some implementation
+        }.attach()
 
-        }
-
-        companion object {
-            const val LAYOUT_ID = R.layout.banner_item
-        }
     }
+
+    companion object {
+        const val LAYOUT_ID = R.layout.banner_item
+    }
+}

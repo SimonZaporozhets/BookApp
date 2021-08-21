@@ -14,4 +14,8 @@ class DetailsUseCase @Inject constructor(
         return result.books
     }
 
+    fun getBookById(id: Int): BookItemModel {
+        return invoke()[id]
+    }
+
 }

@@ -25,7 +25,7 @@ class BannerAdapter(private val mList: List<BannerItemModel>, val clickListener:
         val imageUrl = books[position].cover
         Glide.with(holder.itemView.context).load(imageUrl)
             .centerCrop()
-            .into(holder.binding.bannerItemImage);
+            .into(holder.binding.bannerItemImage)
     }
 }
 

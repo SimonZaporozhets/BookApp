@@ -1,17 +1,22 @@
 package com.books.app.details
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.ViewCompat
+import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
+import androidx.viewpager2.widget.ViewPager2
+import androidx.viewpager2.widget.ViewPager2.ORIENTATION_HORIZONTAL
 import com.books.app.App
+import com.books.app.R
 import com.books.app.databinding.FragmentDetailsBinding
 import com.books.app.model.BookItemModel
-import com.bumptech.glide.Glide
 import javax.inject.Inject
+import kotlin.math.abs
+import kotlin.math.max
 
 
 class DetailsFragment : Fragment() {
@@ -38,32 +43,53 @@ class DetailsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        val viewPager = binding.detailsTopSlider
+
+        val topSliderAdapter = DetailsTopSliderAdapter()
+        viewPager.adapter = topSliderAdapter
+
+        viewModel.books.observe(viewLifecycleOwner, { books ->
+            topSliderAdapter.setBookList(books)
+            viewPager.setCurrentItem(args.bookId, false)
+            setBookInfo(books[args.bookId])
+        })
+
+        with(viewPager) {
+            clipToPadding = false
+            clipChildren = false
+            offscreenPageLimit = 3
+        }
+
+        viewPager.setPageTransformer(ViewPager2PageTransformation(requireContext()))
+
         binding.backArrow.setOnClickListener {
             val action = DetailsFragmentDirections.actionDetailsFragmentToBookListFragment()
             findNavController().navigate(action)
         }
 
-        val id = args.bookId
-
-        viewModel.books.observe(viewLifecycleOwner, { books ->
-            val book = books[id]
-            setBookInfo(book)
+        viewPager.registerOnPageChangeCallback(object :
+            ViewPager2.OnPageChangeCallback() {
+            override fun onPageSelected(position: Int) {
+                super.onPageSelected(position)
+                if (topSliderAdapter.list.isNotEmpty()) {
+                    val book = viewModel.getBookById(position)
+                    setBookInfo(book)
+                }
+            }
         })
+
     }
 
     private fun setBookInfo(book: BookItemModel) {
-
-        Glide.with(requireContext()).load(book.cover_url)
-            .centerCrop()
-            .into(binding.bookCover)
-
-        binding.bookName.text = book.name
-        binding.bookAuthor.text = book.author
-        binding.readersInfo.text = book.views
-        binding.likesInfo.text = book.likes
-        binding.quotesInfo.text = book.quotes
-        binding.genreInfo.text = book.genre
-        binding.summaryInfo.text = book.summary
+        with(binding) {
+            bookName.text = book.name
+            bookAuthor.text = book.author
+            readersInfo.text = book.views
+            likesInfo.text = book.likes
+            quotesInfo.text = book.quotes
+            genreInfo.text = book.genre
+            summaryInfo.text = book.summary
+        }
 
     }
 
