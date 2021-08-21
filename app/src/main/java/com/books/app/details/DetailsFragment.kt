@@ -4,19 +4,14 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.view.ViewCompat
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.viewpager2.widget.ViewPager2
-import androidx.viewpager2.widget.ViewPager2.ORIENTATION_HORIZONTAL
 import com.books.app.App
-import com.books.app.R
 import com.books.app.databinding.FragmentDetailsBinding
 import com.books.app.model.BookItemModel
 import javax.inject.Inject
-import kotlin.math.abs
-import kotlin.math.max
 
 
 class DetailsFragment : Fragment() {

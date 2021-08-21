@@ -1,13 +1,10 @@
 package com.books.app.details
 
 import android.content.Context
-import android.view.ContextMenu
 import android.view.View
 import androidx.core.view.ViewCompat
 import androidx.viewpager2.widget.ViewPager2
 import com.books.app.R
-import java.lang.Math.abs
-import java.lang.Math.max
 
 class ViewPager2PageTransformation(val context: Context) : ViewPager2.PageTransformer {
 

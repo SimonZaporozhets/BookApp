@@ -1,6 +1,7 @@
 package com.books.app.details
 
-import com.books.app.model.*
+import com.books.app.model.BookItemModel
+import com.books.app.model.RemoteConfigRepository
 import javax.inject.Inject
 
 class DetailsUseCase @Inject constructor(

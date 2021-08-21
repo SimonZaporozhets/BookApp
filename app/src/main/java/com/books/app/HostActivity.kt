@@ -1,9 +1,7 @@
 package com.books.app
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.books.app.di.AppComponent
-import javax.inject.Inject
+import androidx.appcompat.app.AppCompatActivity
 
 class HostActivity : AppCompatActivity() {
 

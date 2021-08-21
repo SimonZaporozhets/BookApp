@@ -8,8 +8,8 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.books.app.App
-import com.books.app.library.adapters.ParentItemAdapter
 import com.books.app.databinding.FragmentLibraryBinding
+import com.books.app.library.adapters.ParentItemAdapter
 import javax.inject.Inject
 
 

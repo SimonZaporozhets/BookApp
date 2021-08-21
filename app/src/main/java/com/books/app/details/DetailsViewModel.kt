@@ -19,7 +19,7 @@ class DetailsViewModel @Inject constructor(private val detailsUseCase: DetailsUs
         booksUiModel.value = data
     }
 
-    fun getBookById(id: Int) : BookItemModel {
+    fun getBookById(id: Int): BookItemModel {
         return detailsUseCase.getBookById(id)
     }
 

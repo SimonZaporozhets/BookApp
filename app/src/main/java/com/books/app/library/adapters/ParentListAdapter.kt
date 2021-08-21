@@ -5,11 +5,11 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
+import com.books.app.library.viewholders.BannerParentViewHolder
+import com.books.app.library.viewholders.BookListItemViewHolder
 import com.books.app.model.BannerListModel
 import com.books.app.model.BookListItemModel
 import com.books.app.model.BooksUiModels
-import com.books.app.library.viewholders.BannerParentViewHolder
-import com.books.app.library.viewholders.BookListItemViewHolder
 
 
 class ParentItemAdapter(private val itemClickListener: (Int) -> Unit) :

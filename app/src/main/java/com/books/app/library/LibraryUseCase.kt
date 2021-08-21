@@ -1,9 +1,9 @@
 package com.books.app.library
 
-import com.books.app.model.RemoteConfigRepository
 import com.books.app.model.BannerListModel
 import com.books.app.model.BookListItemModel
 import com.books.app.model.BooksUiModels
+import com.books.app.model.RemoteConfigRepository
 import javax.inject.Inject
 
 class LibraryUseCase @Inject constructor(

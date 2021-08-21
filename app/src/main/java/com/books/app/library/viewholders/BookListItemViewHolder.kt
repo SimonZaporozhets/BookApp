@@ -3,9 +3,9 @@ package com.books.app.library.viewholders
 import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.books.app.library.adapters.ChildListAdapter
 import com.books.app.R
 import com.books.app.databinding.ParentRvItemsBinding
+import com.books.app.library.adapters.ChildListAdapter
 import com.books.app.model.BookListItemModel
 
 class BookListItemViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
