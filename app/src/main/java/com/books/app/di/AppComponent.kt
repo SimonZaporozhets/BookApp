@@ -1,8 +1,8 @@
 package com.books.app.di
 
 import android.content.Context
-import com.books.app.details.DetailsFragment
 import com.books.app.HostActivity
+import com.books.app.details.DetailsFragment
 import com.books.app.library.LibraryFragment
 import com.books.app.loading.SplashActivity
 import dagger.Component

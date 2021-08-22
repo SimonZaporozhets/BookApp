@@ -4,6 +4,7 @@ import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 import com.books.app.BannerAdapter
 import com.books.app.R
+import com.books.app.autoScroll
 import com.books.app.databinding.BannerItemBinding
 import com.books.app.model.BannerListModel
 import com.google.android.material.tabs.TabLayoutMediator
@@ -17,6 +18,8 @@ class BannerParentViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
         val bannerAdapter = BannerAdapter(bannerListModel.bannerItemList, clickListener)
 
         binding.topBanner.adapter = bannerAdapter
+
+        binding.topBanner.autoScroll(2000)
 
         TabLayoutMediator(binding.tabLayout, binding.topBanner) { tab, position ->
             //Some implementation
